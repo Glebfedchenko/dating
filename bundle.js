@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c22bc50200a74a198cd1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b757bd72b497e6cc1fbd"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -28076,16 +28076,183 @@ var _Header = __webpack_require__("./src/components/Header.js");
 
 var _Header2 = _interopRequireDefault(_Header);
 
+var _Footer = __webpack_require__("./src/components/Footer.js");
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _Info = __webpack_require__("./src/components/Info.js");
+
+var _Info2 = _interopRequireDefault(_Info);
+
+var _JoinUs = __webpack_require__("./src/components/JoinUs.js");
+
+var _JoinUs2 = _interopRequireDefault(_JoinUs);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
     return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Header2.default, null)
+        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Info2.default, null),
+        _react2.default.createElement(_JoinUs2.default, null),
+        _react2.default.createElement(_Footer2.default, null)
     );
 };
 exports.default = App;
+
+/***/ }),
+
+/***/ "./src/components/Footer.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Footer = function Footer() {
+    return _react2.default.createElement(
+        'section',
+        { className: 'footersection' },
+        _react2.default.createElement(
+            'div',
+            { className: 'container', id: 'footercontainer' },
+            _react2.default.createElement(
+                'div',
+                { className: 'col-md-5 col-lg-5 col-sm-5 col-xs-12' },
+                _react2.default.createElement(
+                    'h1',
+                    { id: 'about' },
+                    'ABOUT US'
+                ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    ' We are announcing the rebranding of Dating Solutions to WP Dating today. We thank all our customers of Dating Solutions and assure you that you will still remain as valued customers. You will still be able to receive the same or better level of products and support'
+                )
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'col-md-2 col-lg-2 col-sm-2 col-xs-6', id: 'footerlinks' },
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: '' },
+                        'Home'
+                    )
+                ),
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: '' },
+                        'Search'
+                    )
+                ),
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: '' },
+                        'Members'
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'col-md-2 col-lg-2 col-sm-2 col-xs-6', id: 'footerlinks' },
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: '' },
+                        'Extras'
+                    )
+                ),
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: '' },
+                        'Contact Us'
+                    )
+                ),
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: '' },
+                        'Blog'
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'col-md-3 col-lg-3 col-sm-3 col-xs-12' },
+                _react2.default.createElement(
+                    'h3',
+                    { id: 'social' },
+                    'SOCIAL'
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    null,
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '' },
+                            _react2.default.createElement('i', { className: 'fa fa-twitter-square fa-2x', 'aria-hidden': 'true' })
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '' },
+                            _react2.default.createElement('i', { className: 'fa fa-facebook-square fa-2x', 'aria-hidden': 'true' })
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '' },
+                            _react2.default.createElement('i', { className: 'fa fa-instagram fa-2x', 'aria-hidden': 'true' })
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'p',
+                    { id: 'copy' },
+                    'Copyright @ Karma Dating 2017'
+                )
+            )
+        )
+    );
+};
+
+exports.default = Footer;
 
 /***/ }),
 
@@ -28264,6 +28431,133 @@ exports.default = Header;
 
 /***/ }),
 
+/***/ "./src/components/Info.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _maleUsers = __webpack_require__("./src/styles/img/maleUsers.png");
+
+var _maleUsers2 = _interopRequireDefault(_maleUsers);
+
+var _femaleUsers = __webpack_require__("./src/styles/img/femaleUsers.png");
+
+var _femaleUsers2 = _interopRequireDefault(_femaleUsers);
+
+var _married = __webpack_require__("./src/styles/img/married.png");
+
+var _married2 = _interopRequireDefault(_married);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Info = function Info() {
+    return _react2.default.createElement(
+        'section',
+        { className: 'infosection' },
+        _react2.default.createElement(
+            'div',
+            { className: 'container text-center' },
+            _react2.default.createElement(
+                'div',
+                { className: 'col-md-4 col-lg-4 col-sm-4 col-xs-4 text-center', id: 'infoContainer' },
+                _react2.default.createElement('img', { src: _femaleUsers2.default, alt: '' }),
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    'OVER 5000'
+                ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    'Female users'
+                )
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'col-md-4 col-lg-4 col-sm-4 text-center col-xs-4', id: 'infoContainer' },
+                _react2.default.createElement('img', { src: _married2.default, alt: '' }),
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    'OVER 9000'
+                ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    'Happy couples'
+                )
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'col-md-4 col-lg-4 col-sm-4 text-center col-xs-4', id: 'infoContainer' },
+                _react2.default.createElement('img', { src: _maleUsers2.default, alt: '' }),
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    'OVER 4000'
+                ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    'Male users'
+                )
+            )
+        )
+    );
+};
+exports.default = Info;
+
+/***/ }),
+
+/***/ "./src/components/JoinUs.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var JoinUs = function JoinUs() {
+    return _react2.default.createElement(
+        'section',
+        { className: 'joinsection' },
+        _react2.default.createElement(
+            'div',
+            { className: 'container text-center' },
+            _react2.default.createElement(
+                'h1',
+                null,
+                'JOIN US NOW'
+            ),
+            _react2.default.createElement(
+                'button',
+                { id: 'createaccount', className: 'btn btn-lg' },
+                'CREATE AN ACCOUNT'
+            )
+        )
+    );
+};
+exports.default = JoinUs;
+
+/***/ }),
+
 /***/ "./src/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28358,6 +28652,13 @@ if(true) {
 
 /***/ }),
 
+/***/ "./src/styles/img/femaleUsers.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "9b08d086042f9ce8d739025e03928861.png";
+
+/***/ }),
+
 /***/ "./src/styles/img/infobackground.png":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28376,6 +28677,20 @@ module.exports = __webpack_require__.p + "3bede6b32c7f0adcdcd9f065f90460ff.jpg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "4b476b9cc247cc0123ccf683935136bb.jpg";
+
+/***/ }),
+
+/***/ "./src/styles/img/maleUsers.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "9a6d3eb5804eced4c3a85abab265ba32.png";
+
+/***/ }),
+
+/***/ "./src/styles/img/married.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "8ea5616a9a63333f9eeda92d885191aa.png";
 
 /***/ })
 
