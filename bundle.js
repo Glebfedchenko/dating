@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e1033eb662b417a19942"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "31bef5bef7c20bfd79ee"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -41693,6 +41693,10 @@ var _Members = __webpack_require__("./src/components/Members/Members.js");
 
 var _Members2 = _interopRequireDefault(_Members);
 
+var _Search = __webpack_require__("./src/components/Search.js");
+
+var _Search2 = _interopRequireDefault(_Search);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -41700,6 +41704,7 @@ var App = function App() {
         'div',
         null,
         _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Search2.default, null),
         _react2.default.createElement(_Members2.default, null),
         _react2.default.createElement(_Info2.default, null),
         _react2.default.createElement(_JoinUs2.default, null),
@@ -42561,6 +42566,201 @@ Register = (0, _reduxForm.reduxForm)({
   form: 'registerform'
 })(Register);
 exports.default = (0, _toggleOpen2.default)(Register);
+
+/***/ }),
+
+/***/ "./src/components/Search.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reduxForm = __webpack_require__("./node_modules/redux-form/es/index.js");
+
+var _InputFields = __webpack_require__("./src/components/Forms/InputFields.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Search = function (_Component) {
+    _inherits(Search, _Component);
+
+    function Search() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, Search);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.state = {}, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(Search, [{
+        key: 'render',
+        value: function render() {
+            var colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+            var i = ["Male", "Female"];
+            var seek = ["Male", "Female"];
+            var age = [19, 22, 25, 28, 35];
+            var to = ["Marry", "Date", "Chat"];
+            var country = ["Ukraine", "Czhech", "Paraguay", "USA"];
+            var _props = this.props,
+                handleSubmit = _props.handleSubmit,
+                load = _props.load,
+                pristine = _props.pristine,
+                reset = _props.reset,
+                submitting = _props.submitting;
+
+            return _react2.default.createElement(
+                'section',
+                null,
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container text-center' },
+                    _react2.default.createElement(
+                        'form',
+                        { onSubmit: this.handleSubmit },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-5' },
+                            _react2.default.createElement(
+                                _reduxForm.Field,
+                                { name: 'favoriteColor', component: 'select' },
+                                _react2.default.createElement(
+                                    'option',
+                                    { value: '' },
+                                    'I am:'
+                                ),
+                                i.map(function (x) {
+                                    return _react2.default.createElement(
+                                        'option',
+                                        { value: x, key: x },
+                                        x
+                                    );
+                                })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-5' },
+                            _react2.default.createElement(
+                                _reduxForm.Field,
+                                { name: 'favoriteColor', component: 'select' },
+                                _react2.default.createElement(
+                                    'option',
+                                    { value: '' },
+                                    'Seeking a:'
+                                ),
+                                seek.map(function (x) {
+                                    return _react2.default.createElement(
+                                        'option',
+                                        { value: x, key: x },
+                                        x
+                                    );
+                                })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-12' },
+                            _react2.default.createElement(
+                                _reduxForm.Field,
+                                { name: 'favoriteColor', component: 'select' },
+                                _react2.default.createElement(
+                                    'option',
+                                    { value: '' },
+                                    'Age:'
+                                ),
+                                age.map(function (x) {
+                                    return _react2.default.createElement(
+                                        'option',
+                                        { value: x, key: x },
+                                        x
+                                    );
+                                })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-6' },
+                            _react2.default.createElement(
+                                _reduxForm.Field,
+                                { name: 'favoriteColor', component: 'select' },
+                                _react2.default.createElement(
+                                    'option',
+                                    { value: '' },
+                                    'To:'
+                                ),
+                                to.map(function (x) {
+                                    return _react2.default.createElement(
+                                        'option',
+                                        { value: x, key: x },
+                                        x
+                                    );
+                                })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-6' },
+                            _react2.default.createElement(
+                                _reduxForm.Field,
+                                { name: 'favoriteColor', component: 'select' },
+                                _react2.default.createElement(
+                                    'option',
+                                    { value: '' },
+                                    'Country:'
+                                ),
+                                country.map(function (x) {
+                                    return _react2.default.createElement(
+                                        'option',
+                                        { value: x, key: x },
+                                        x
+                                    );
+                                })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-12' },
+                            _react2.default.createElement(
+                                'button',
+                                { className: 'searchBtn btn btn-lg btn-sm btn-md', type: 'submit', disabled: pristine || submitting },
+                                'SEARCH'
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Search;
+}(_react.Component);
+
+Search = (0, _reduxForm.reduxForm)({
+    form: 'searchForm'
+})(Search);
+exports.default = Search;
 
 /***/ }),
 
