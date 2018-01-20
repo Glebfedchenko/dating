@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "31bef5bef7c20bfd79ee"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "473d764797e53180c1c0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -41697,6 +41697,10 @@ var _Search = __webpack_require__("./src/components/Search.js");
 
 var _Search2 = _interopRequireDefault(_Search);
 
+var _Contact = __webpack_require__("./src/components/Contact.js");
+
+var _Contact2 = _interopRequireDefault(_Contact);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -41708,10 +41712,166 @@ var App = function App() {
         _react2.default.createElement(_Members2.default, null),
         _react2.default.createElement(_Info2.default, null),
         _react2.default.createElement(_JoinUs2.default, null),
+        _react2.default.createElement(_Contact2.default, null),
         _react2.default.createElement(_Footer2.default, null)
     );
 };
 exports.default = App;
+
+/***/ }),
+
+/***/ "./src/components/Contact.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reduxForm = __webpack_require__("./node_modules/redux-form/es/index.js");
+
+var _Errors = __webpack_require__("./src/components/Forms/Errors.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*the way input has to be rendered*/
+var nameInput = function nameInput(_ref) {
+    var input = _ref.input,
+        label = _ref.label,
+        type = _ref.type,
+        _ref$meta = _ref.meta,
+        touched = _ref$meta.touched,
+        error = _ref$meta.error,
+        warning = _ref$meta.warning;
+    return _react2.default.createElement(
+        "div",
+        { className: "form-group" },
+        _react2.default.createElement("input", _extends({ id: "nameInput", className: "form-control" }, input, { type: type, placeholder: label })),
+        touched && (error && _react2.default.createElement(
+            "span",
+            null,
+            error
+        ) || warning && _react2.default.createElement(
+            "span",
+            null,
+            warning
+        ))
+    );
+};
+var emailInput = function emailInput(_ref2) {
+    var input = _ref2.input,
+        label = _ref2.label,
+        type = _ref2.type,
+        _ref2$meta = _ref2.meta,
+        touched = _ref2$meta.touched,
+        error = _ref2$meta.error,
+        warning = _ref2$meta.warning;
+    return _react2.default.createElement(
+        "div",
+        { className: "form-group" },
+        _react2.default.createElement("input", _extends({ id: "emailInput", className: "form-control" }, input, { type: type, placeholder: label })),
+        touched && (error && _react2.default.createElement(
+            "span",
+            null,
+            error
+        ) || warning && _react2.default.createElement(
+            "span",
+            null,
+            warning
+        ))
+    );
+};
+var messageInput = function messageInput(_ref3) {
+    var input = _ref3.input,
+        label = _ref3.label,
+        type = _ref3.type,
+        _ref3$meta = _ref3.meta,
+        touched = _ref3$meta.touched,
+        error = _ref3$meta.error,
+        warning = _ref3$meta.warning;
+    return _react2.default.createElement(
+        "div",
+        { className: "form-group" },
+        _react2.default.createElement("input", _extends({ id: "messageInput", className: "form-control" }, input, { type: type, placeholder: label })),
+        touched && (error && _react2.default.createElement(
+            "span",
+            null,
+            error
+        ) || warning && _react2.default.createElement(
+            "span",
+            null,
+            warning
+        ))
+    );
+};
+
+var ContactForm = function ContactForm(props) {
+    var handleSubmit = props.handleSubmit,
+        pristine = props.pristine,
+        reset = props.reset,
+        submitting = props.submitting;
+
+    return _react2.default.createElement(
+        "section",
+        { className: "contactsection" },
+        _react2.default.createElement(
+            "div",
+            { className: "container" },
+            _react2.default.createElement(
+                "form",
+                { onSubmit: handleSubmit },
+                _react2.default.createElement(
+                    "div",
+                    { className: "col-md-6 col-sm-6 col-lg-6" },
+                    _react2.default.createElement(_reduxForm.Field, {
+                        name: "firstname",
+                        label: "Name",
+                        component: nameInput,
+                        validate: _Errors.required
+                    }),
+                    _react2.default.createElement(_reduxForm.Field, {
+                        name: "email",
+                        label: "Enter Email",
+                        component: emailInput,
+                        validate: [_Errors.email, _Errors.required]
+                    })
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "col-md-6 col-sm-6 col-lg-6" },
+                    _react2.default.createElement(_reduxForm.Field, {
+                        name: "message",
+                        label: "Your message",
+                        component: messageInput,
+                        validate: [_Errors.required, _Errors.maxL, _Errors.minL]
+                    })
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "text-center" },
+            _react2.default.createElement(
+                "button",
+                { id: "contactButton", className: "btn btn-lg",
+                    disabled: submitting },
+                "SUBMIT"
+            )
+        )
+    );
+};
+
+exports.default = (0, _reduxForm.reduxForm)({
+    form: 'contactForm'
+})(ContactForm);
 
 /***/ }),
 
@@ -41864,6 +42024,51 @@ var Footer = function Footer() {
 };
 
 exports.default = Footer;
+
+/***/ }),
+
+/***/ "./src/components/Forms/Errors.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.number = exports.minL = exports.minLength = exports.maxL = exports.maxLength = exports.email = exports.required = undefined;
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*define errors*/
+var required = exports.required = function required(value) {
+  return value ? null : "Required";
+};
+var email = exports.email = function email(value) {
+  return value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ? 'Invalid email address' : undefined;
+};
+
+var maxLength = exports.maxLength = function maxLength(max) {
+  return function (value) {
+    return value && value.length > max ? 'Not more than ' + max + ' ' : undefined;
+  };
+};
+var maxL = exports.maxL = maxLength(150);
+
+var minLength = exports.minLength = function minLength(min) {
+  return function (value) {
+    return value && value.length < min ? 'Must be ' + min + ' characters or more' : undefined;
+  };
+};
+var minL = exports.minL = minLength(10);
+
+var number = exports.number = function number(value) {
+  return value && isNaN(Number(value)) ? '' : undefined;
+};
 
 /***/ }),
 
@@ -42587,8 +42792,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reduxForm = __webpack_require__("./node_modules/redux-form/es/index.js");
 
-var _InputFields = __webpack_require__("./src/components/Forms/InputFields.js");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -42601,17 +42804,9 @@ var Search = function (_Component) {
     _inherits(Search, _Component);
 
     function Search() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
         _classCallCheck(this, Search);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.state = {}, _temp), _possibleConstructorReturn(_this, _ret);
+        return _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).apply(this, arguments));
     }
 
     _createClass(Search, [{
@@ -42644,7 +42839,7 @@ var Search = function (_Component) {
                             { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-5' },
                             _react2.default.createElement(
                                 _reduxForm.Field,
-                                { name: 'favoriteColor', component: 'select' },
+                                { name: 'iam', component: 'select' },
                                 _react2.default.createElement(
                                     'option',
                                     { value: '' },
@@ -42664,7 +42859,7 @@ var Search = function (_Component) {
                             { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-5' },
                             _react2.default.createElement(
                                 _reduxForm.Field,
-                                { name: 'favoriteColor', component: 'select' },
+                                { name: 'seeking', component: 'select' },
                                 _react2.default.createElement(
                                     'option',
                                     { value: '' },
@@ -42684,7 +42879,7 @@ var Search = function (_Component) {
                             { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-12' },
                             _react2.default.createElement(
                                 _reduxForm.Field,
-                                { name: 'favoriteColor', component: 'select' },
+                                { name: 'age', component: 'select' },
                                 _react2.default.createElement(
                                     'option',
                                     { value: '' },
@@ -42704,7 +42899,7 @@ var Search = function (_Component) {
                             { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-6' },
                             _react2.default.createElement(
                                 _reduxForm.Field,
-                                { name: 'favoriteColor', component: 'select' },
+                                { name: 'to', component: 'select' },
                                 _react2.default.createElement(
                                     'option',
                                     { value: '' },
@@ -42724,7 +42919,7 @@ var Search = function (_Component) {
                             { className: 'col-md-2 col-lg-2 col-sm-4 col-xs-6' },
                             _react2.default.createElement(
                                 _reduxForm.Field,
-                                { name: 'favoriteColor', component: 'select' },
+                                { name: 'country', component: 'select' },
                                 _react2.default.createElement(
                                     'option',
                                     { value: '' },
