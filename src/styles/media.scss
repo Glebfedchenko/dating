@@ -1,0 +1,99 @@
+@media(min-width:320px) and (max-width: 374px){
+    #memberButtonsContainer{
+        .onlineMembers, .newMembers{
+            font-size: 16px;
+        }
+    }
+}
+@media(min-width:375px) and (max-width: 767px){
+    #memberButtonsContainer{
+        .onlineMembers, .newMembers{
+            font-size: 20px;
+        }
+    }
+}
+@media(width:768px){
+    #memberButtonsContainer{
+        .onlineMembers, .newMembers{
+            font-size: 28px;
+        }
+    }
+}
+
+@media(min-width:320px) and (max-width:768px){
+    #social, #footercontainer ul, #copy{
+        text-align: center;
+    }
+}
+
+
+@media (min-width:1024px) and (max-width: 1439px){
+    #navigation{
+        #logo{
+            margin: 35px 0 40px 0;
+            #logolink{
+                font-size: 20px;
+            }
+        }
+        #navbarul{
+            ul{
+                margin-left: 35px;
+            }
+                a{
+                    font-size: 16px;
+                }
+        }
+        #signup #signuplink{
+            font-size: 14px;
+        }
+    }
+}
+@media (min-width:992px) and (max-width:1023px){
+    #navigation{
+               #navbarul{
+                a{
+                    font-size: 16px;
+                }
+        }
+    }
+}
+@media (min-width:990px) and (max-width:991px){
+    #navigation{
+               #navbarul{
+                a{
+                    font-size: 12px;
+                }
+        }
+    }
+}
+@media (min-width:768px) and (max-width:989px){
+    #navigation{
+               #navbarul{
+                a{
+                    font-size: 12px;
+                }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width:1023px) {
+    #navigation{
+        #logo{
+            margin: 40px 0 40px 0;
+            #logolink{
+                font-size: 14px;
+            }
+        }
+        #navbarul{
+            ul{
+                margin-left: 20px;
+            }
+                // a{
+                //     font-size: 10px;
+                // }
+        }
+        #signup #signuplink{
+            font-size: 10px;
+        }
+    }
+    
+}
